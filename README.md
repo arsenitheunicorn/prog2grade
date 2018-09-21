@@ -6,4 +6,5 @@
 
 **№**|**Описание**|**Ссылка на работу**
 :---:|:---:|:---:
-**1**|Игра "Виселица"|[*Код*](https://youtu.be/dQw4w9WgXcQ)
+**0**|Проверка связи|[*Код*](https://youtu.be/dQw4w9WgXcQ)
+**1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/hw1)
