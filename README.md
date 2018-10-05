@@ -1,11 +1,11 @@
-# prog2grade
+# Программирование, 2 курс
 ### Домашние задания по курсу "Программирование и компьютерные инструменты лингвистического исследования"
 ### студента II курса Аверина Арсения
-#### ~~Мудрость предыдущих поколений~~ Домашки (и вообще) за I курс: [туть](https://github.com/arsenitheunicorn/prog "VIII. Не кради")
-#### Найти домашки ~~без СМС и регистрации~~:
+#### Домашки (и вообще) за I курс: [туть](https://github.com/arsenitheunicorn/prog "VIII. Не кради")
+#### Найти  текущие домашки ~~без СМС и регистрации~~:
 
 **№**|**Описание**|**Ссылка на работу**
 :---:|---|:---:
 **0**|Проверка связи|[*Код*](https://youtu.be/dQw4w9WgXcQ)
-**1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw1)
-**2**|Домашнее задание №2|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw2)
+**1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw1/averin_hw1.ipynb)
+**2**|Домашнее задание №2|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw2/averin2hw.ipynb)
