@@ -7,4 +7,5 @@
 **№**|**Описание**|**Ссылка на работу**
 :---:|---|:---:
 **0**|Проверка связи|[*Код*](https://youtu.be/dQw4w9WgXcQ)
-**1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/hw1)
+**1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw1)
+**2**|Домашнее задание №2|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw2)
