@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+	<meta charset='utf-8'>
+	<title>Список слов Дагестан-2018</title>
+</head>
+<body>
+<form action='http://127.0.0.1:5000/results' method = 'POST'>
+	<fieldset>
+		<legend><b>Метаданные</b></legend>
+	Ваше имя:<br>
+	<input type='text' name='name' required pattern='[а-яА-ЯёЁ- ]+'><br>
+	Ваш возраст (только число):<br>
+	<input type='text' name='age' required pattern='\d+'><br>
+	Ваш населенный пункт:<br>
+	<input type='text' name='town'><br>
+	Какой язык является вашим родным?<br>
+	<input type='radio' name='lang' value='rus' checked>русский<br>
+	<input type='radio' name='lang' value='agul' checked>агульский<br>
+	<input type='radio' name='lang' value='az' checked>азербайджанский<br>
+	<input type='radio' name='lang' value='drgw' checked>даргинский<br>
+	<input type='radio' name='lang' value='lezg' checked>лезгинский<br>
+	<input type='radio' name='lang' value='tab' checked>табасаранский<br>
+	</fieldset>
+	<fieldset>
+		<legend><b>Список слов Дагестан-2018</b></legend>
+	<p>Вам будет предложено перевести несколько слов на Ваш родной язык.</p>
+	<p>Используйте при записи только кириллические символы, 1 и пробел. Если не сможете перевести — запишите в поле для ответа цифру 0</p>
+	Гусеница<br>
+	<input type='text' name='word1' required pattern='[а-яА-ЯёЁ01 ]+'><br>
+	Желток<br>
+	<input type='text' name='word2' required pattern='[а-яА-ЯёЁ01 ]+'><br>
+	Молния<br>
+	<input type='text' name='word3' required pattern='[а-яА-ЯёЁ01 ]+'><br>
+	Палец ноги<br>
+	<input type='text' name='word4' required pattern='[а-яА-ЯёЁ01 ]+'><br>
+	Паутина<br>
+	<input type='text' name='word5' required pattern='[а-яА-ЯёЁ01 ]+'><br>
+	<p><input type='submit' value='Готово!'></p>
+	
+	</fieldset>
+</form>
+<p><a href='/stats'>Статистика</a></p>
+<p><a href='/json'>json</a></p>
+<p><a href='/search'>Поиск: частотный словарик</a></p>
+</body>
+</html>

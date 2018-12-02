@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список ответов</title>
+</head>
+<body>
+    <p>
+    {%for row in content%}
+        {%print(" ".join(row))%}
+        <br>
+    {%endfor%}
+    </p>
+<p><a href='/'>Старт!</a></p>
+<p><a href='/stats'>Статистика</a></p>
+<p><a href='/json'>json</a></p>
+<p><a href='/search'>Поиск: частотный словарик</a></p>
+</body>
+</html>
