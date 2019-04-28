@@ -12,3 +12,4 @@
 **3**|Газетный корпус|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw3project1_newspapers/hw3.ipynb), [*readme*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw3project1_newspapers/README.md)
 **4**|Сайт-опросник|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw4_quest/my_seite_code.py), [*templates*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw4_quest/templates)
 **5**|Поиск по корпусу|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw5/hw5.py), [*readme*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw5/readme.md)
+**6**|Поиск по корпусу|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw6/hw6_corp.ipynb), [*readme*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw6/readme.md)
