@@ -14,3 +14,4 @@
 **5**|Поиск по корпусу|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw5/hw5.py), [*readme*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw5/readme.md)
 **6**|VK API|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw6/hw6_corp.ipynb), [*readme*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw6/readme.md)
 **X**|flask + pymorphy2|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/bonus_flask/flask_app.py)
+**7**|word2vec + графы|[*Код*](https://github.com/arsenitheunicorn/prog2grade/blob/master/hw7/averin_last_hw.ipynb)
