@@ -3,8 +3,14 @@ import re
 import requests
 from time import mktime
 from datetime import datetime
-import sqlite3
 import pymorphy2
+import matplotlib.pyplot as plt
+from matplotlib import style
+from numpy import polyfit
+import numpy as np
+from scipy.interpolate import interp1d
+from wordcloud import WordCloud
+
 
 def vk(method, params):
     api_req = 'https://api.vk.com/method/'
@@ -14,14 +20,17 @@ def vk(method, params):
     json_raw = requests.get(api_req).text
     return json.loads(json_raw)
 
+
 def robotdate(s):
     d = mktime(datetime.strptime(s, "%d/%m/%Y").timetuple())
     return d
+
 
 def humandate(udate):
     x = '%Y-%m-%d %H:%M:%S'
     d = datetime.fromtimestamp(udate).strftime(x)
     return d
+
 
 def get_the_age(bdate):
     td_str = str(datetime.today())
@@ -39,6 +48,7 @@ def get_the_age(bdate):
         elif bd[0] <= td[0]:
             age = td[2] - bd[2]
     return age
+
 
 def wall_dl(base_params, d1, d2):
     m = 'wall.get'
@@ -63,7 +73,7 @@ def wall_dl(base_params, d1, d2):
                 if date_unix > d1 and date_unix < d2:
                     text = items["text"]
                     post_id = items["id"]
-                    posts.append(post_id) 
+                    posts.append(post_id)
                     texts += text
             i += 100
     else:
@@ -71,10 +81,11 @@ def wall_dl(base_params, d1, d2):
         texts = res['error']['error_msg']
     return posts, texts
 
+
 def work_with_text(text, morph):
     text = re.sub('[\t\n]', ' ', text)
     text = re.sub('[^А-Яа-яЁёA-Za-z -]', '', text)
-    text = re.sub('\s+(\s)', r'\1', text)
+    text = re.sub(r'\s+(\s)', r'\1', text)
     text.lower()
     words = text.split()
     freq = {}
@@ -93,6 +104,7 @@ def work_with_text(text, morph):
         mess = [item, freq[item]]
         message.append(mess)
     return message, freq
+
 
 def snooping(base_params, user_id):
     params = base_params.copy()
@@ -125,6 +137,7 @@ def snooping(base_params, user_id):
         age = ''
     return [sex, city, age]
 
+
 def comments(base_params, posts):
     u_dict = {}
     m = 'wall.getComments'
@@ -156,6 +169,7 @@ def comments(base_params, posts):
             i += 100
     return u_dict
 
+
 def stats_for_graphs(u_dict):
     sex = {}
     cities = {}
@@ -181,11 +195,6 @@ def stats_for_graphs(u_dict):
         u_freq[user] = u_dict[user][1]
     return sex, cities, ages, u_freq
 
-import matplotlib.pyplot as plt
-from matplotlib import style
-from numpy import polyfit
-import numpy as np 
-from scipy.interpolate import interp1d
 
 def bars_city(d):
     style.use('dark_background')
@@ -208,6 +217,7 @@ def bars_city(d):
     plt.savefig(filename)
     plt.close()
 
+
 def bars_sex(d):
     x = []
     y = []
@@ -225,6 +235,7 @@ def bars_sex(d):
     plt.savefig(filename)
     plt.close()
 
+
 def graph_age(d):
     x = []
     y = []
@@ -233,8 +244,8 @@ def graph_age(d):
             x.append(item)
             y.append(d[item])
     coefficients = polyfit(x, y, 4)
-    p = np.poly1d(coefficients) 
-    x_p = np.linspace(0, max(x), 1000) 
+    p = np.poly1d(coefficients)
+    x_p = np.linspace(0, max(x), 1000)
     style.use('dark_background')
     plt.plot(x_p, p(x_p), c='red')
     gtitle = "Количество комментаторов по возрастам"
@@ -247,6 +258,7 @@ def graph_age(d):
     filename = 'static/age.png'
     plt.savefig(filename, dpi=300)
     plt.close()
+
 
 def top_comments(d, base_params):
     mt = 'users.get'
@@ -290,8 +302,6 @@ def top_comments(d, base_params):
         ml.append(m)
     return ml
 
-from PIL import Image
-from wordcloud import WordCloud
 
 def make_cloud(freq):
     text = ''
@@ -305,16 +315,18 @@ def make_cloud(freq):
     cloud.to_file("static/cloud.png")
     plt.close()
 
+
 def almain(vkid, rd1, rd2):
     f = open('tok.txt', 'r')
     tok = f.read()
     d1 = robotdate(rd1)
     d2 = robotdate(rd2)
     base_params = {'access_token': tok,
-              'v': '5.95', 'owner_id': vkid,
-              'filter': 'owner'}
+                  'v': '5.95', 'owner_id': vkid,
+                  'filter': 'owner'}
     posts, text = wall_dl(base_params, d1, d2)
     return posts, text, base_params
+
 
 def main(posts, text, base_params):
     morph = pymorphy2.MorphAnalyzer()
