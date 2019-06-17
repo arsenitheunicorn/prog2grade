@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container col-xl-12">
+            <h1>Узнай всё о пользователе ВК!</h1>
+            <p>Это чýдное приложение позволяет получить узнать кое-что о пользователе или сообществе социальной сети ВКонтакте</p>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="text">Введите id-циферки. id сообществ начинается с минуса!</label>
+                    <input type="number" class="form-control" name="vkid" id="vkid" aria-describedby="text" placeholder="123456789">
+                    <small id="textmuted" class="form-text text-muted">Вводите, не стесняйтесь</small>
+                </div>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="text">Введите даты постов, которые мы хотим обработать, в предложенном ниже формате:</label>
+                    <input type="text" class="form-control" name="d1" id="d1" aria-describedby="text" placeholder="dd/mm/yyyy">
+                    <small id="textmuted" class="form-text text-muted">Сперва более давнюю дату</small>
+                </div>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="text">Еще одна дата постов</label>
+                    <input type="text" class="form-control" name="d2" id="d2" aria-describedby="text" placeholder="dd/mm/yyyy">
+                    <small id="textmuted" class="form-text text-muted">А теперь более позднюю!</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Начать шпионаж!</button>
+            </form>
+            {% if output %}
+                <h3 class="alert alert-success">{{ output }}</h3>
+				<img src="{{url_for('static', alt='Штирлиц', filename='shtir.jpg')}}" /height="300" width="500">
+            {% elif freq %}
+                <h3 class='alert alert-success'>Шалость удалась!!!</h3>
+                <h5>Топ-10 слов за указанный период</h5>
+				<table border='1'>
+				{% for item in freq %}
+				<tr>
+					{% for bb in item %}
+					<td> {{ bb }} </td>
+					{% endfor %} </tr>
+				{% endfor %}
+				</table>
+                <img src='{{url_for("static", alt="Облачко", filename="cloud.png")}}' width="400px" height="200px">
+                <h5>Топ-5 активных комментаторов:</h5>
+				<table border="1">
+					<tr>
+					<th>Имя</th>
+					<th>Дата рождения</th>
+					<th>Город</th>
+					<th>Количество</th>
+					</tr>
+					{% for i in comss %}
+                    <tr>
+						{% for el in i %}
+						<td> {{ el }} </td>
+						{% endfor %} </tr>
+                    {% endfor %}
+				</table>
+                <img src="{{url_for('static', alt='Возраст', filename='age.png')}}" /height="300" width="400">
+                <img src="{{url_for('static', alt='Город', filename='city.png')}}">
+                <img src="{{url_for('static', alt='Пол', filename='sex.png')}}" /height="300" width="400">
+            {% endif %}
+
+
+
+
+
+        </div>
+
+
+        <!-- Скрипты-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
