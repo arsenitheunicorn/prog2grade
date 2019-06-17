@@ -6,6 +6,7 @@
 
 **№**|**Описание**|**Ссылка на работу**
 :---:|---|:---:
+**!!!**|ФИНАЛЬНЫЙ ПРОЕКТ|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/final), 
 **0**|Проверка связи|[*Код*](https://youtu.be/dQw4w9WgXcQ)
 **1**|Игра "Виселица"|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw1/averin_hw1.ipynb)
 **2**|Домашнее задание №2|[*Код*](https://github.com/arsenitheunicorn/prog2grade/tree/master/hw2/averin2hw.ipynb)
